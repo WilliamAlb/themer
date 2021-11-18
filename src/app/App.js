@@ -13,15 +13,25 @@ import { CustomThemeProvider  } from '../providers/customThemeProvider';
 import { routes } from '../util/routes';
 
 import { auth } from '../util/firebase';
+import { Create } from '../features/create/Create';
  
 
-function ProtectedRoute({children}){
-  const [user, loading, error] = useAuthState(auth);
-  console.log(loading);
+function ProtectedRouteAvailableLoggedOut({children}){
+  const [user, loading] = useAuthState(auth);
   if(loading){
     return null;
   }
   if(user){
+    return <Navigate to='/'></Navigate>
+  }
+  return children;
+}
+function ProtectedRouteAvailableLoggedIn({children}){
+  const [user, loading] = useAuthState(auth);
+  if(loading){
+    return null;
+  }
+  if(!user){
     return <Navigate to='/'></Navigate>
   }
   return children;
@@ -39,9 +49,10 @@ function App() {
             </header>
             <main>
               <Routes>
-                  <Route path={routes.login} element={<ProtectedRoute><Login /></ProtectedRoute>}></Route>
-                  <Route path={routes.register} element={<ProtectedRoute><Register /></ProtectedRoute>}></Route>
+                  <Route path={routes.login} element={<ProtectedRouteAvailableLoggedOut><Login /></ProtectedRouteAvailableLoggedOut>}></Route>
+                  <Route path={routes.register} element={<ProtectedRouteAvailableLoggedOut><Register /></ProtectedRouteAvailableLoggedOut>}></Route>
                   <Route path={routes.main} element={<Dashboard></Dashboard>}></Route>
+                  <Route path={routes.create} element={<ProtectedRouteAvailableLoggedIn><Create></Create></ProtectedRouteAvailableLoggedIn>}></Route>
               </Routes>
             </main>
           </Router>

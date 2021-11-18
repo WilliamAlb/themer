@@ -1,12 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectThemes } from "../slices/themesSlice";
+import { ThemeboxCube, ThemeboxDiv, ThemeboxText, ThemeboxTriangle } from "./themebox.style";
 
-export function Themebox(){
-    const themes = useSelector(selectThemes);
+export function Themebox({onClick,renderTheme}){
+
     return (
-        <div>
-            
-        </div>
+        <ThemeboxDiv renderTheme={renderTheme} onClick={e=>onClick(renderTheme)}>
+            <ThemeboxTriangle renderTheme={renderTheme}></ThemeboxTriangle>
+            <ThemeboxText renderTheme={renderTheme}>{renderTheme.name}</ThemeboxText>
+            <ThemeboxCube renderTheme={renderTheme}></ThemeboxCube>
+        </ThemeboxDiv>
     )
 }

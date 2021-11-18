@@ -1,25 +1,19 @@
-import React,{useState,useEffect} from "react";
-import { useSelector } from "react-redux";
-import styled from "styled-components";
-import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword } from "@firebase/auth";
-import { useAuthState } from 'react-firebase-hooks/auth';
+import React,{useState} from "react";
 
-import { collection,setDoc,doc } from "firebase/firestore/lite";
+import { signInWithEmailAndPassword} from "@firebase/auth";
 
-import { selectTheme } from "../slices/currentThemeSlice";
-import './loginStyle.css';
 import * as S from './login.style';
 import { auth } from "../../util/firebase";
-import { Route, useNavigate } from "react-router";
-import { database } from "../../util/firebase";
 import { NavLink } from "react-router-dom";
 import { routes } from "../../util/routes";
+import { Popup } from "../popup/Popup";
 
 export function Login(){
 
     
     const [username,setUsername] = useState('');
     const [password,setPassword] = useState('');
+    const [popup,setPopup] = useState('');
 
     const handleSubmit =(e)=>{
         e.preventDefault();
@@ -29,47 +23,34 @@ export function Login(){
                 setUsername('');
                 setPassword('');
             }).catch(
-                (error)=> console.log(error)
+                (error)=> {
+                    setPopup(error.code);
+                setTimeout(() => {
+                    setPopup('');
+                }, 3000);
+            }
                 );
 
     }
-    
-    const registerWithEmailAndPassword = async (e) => {
-        e.preventDefault();
-        try {
-          const res = await createUserWithEmailAndPassword(auth,username, password);
-          const user = res.user;
-          const docData = doc(database,'users','one');
-          
-          await setDoc(docData,{
-            uid: user.uid,
-            displayName:'fuckface',
-            email:username,
-          });
-        } catch (err) {
-          console.error(err);
-          console.log(err.message);
-        }
-      };
-
     return (
         <S.LoginSection>
-            <div className='loginContent'>
+            <Popup isOpen={!!popup} message={popup} closeTimeoutMS={200}/>
+            <S.loginContent>
                 <S.H1>Login to Themer</S.H1>
-                <form className='loginForm' onSubmit={handleSubmit}>
-                    <label htmlFor='usernameInput'>Email</label>
+                <S.loginForm onSubmit={handleSubmit}>
+                    <S.loginLabel htmlFor='usernameInput'>Email</S.loginLabel>
                     <br/>
-                    <S.Input id='usernameInput' type='text' value={username} onChange={({target})=>setUsername(target.value)}></S.Input>
+                    <S.Input id='usernameInput' required type='text' value={username} onChange={({target})=>setUsername(target.value)}></S.Input>
                     <br/>
-                    <label htmlFor='passwordInput'>Password</label>
+                    <S.loginLabel  htmlFor='passwordInput'>Password</S.loginLabel>
                     <br/>
-                    <S.Input id='passwordInput' type='password'value={password} onChange={({target})=>setPassword(target.value)}></S.Input>
+                    <S.Input id='passwordInput'required type='password'value={password} onChange={({target})=>setPassword(target.value)}></S.Input>
                     <br/>
                     <S.SubmitButton type='submit' value='Login'></S.SubmitButton>
-                </form>
+                </S.loginForm>
                 <p>Don't have an account? {<NavLink to={routes.register}>Register</NavLink>} </p>
-            </div>
-            <div className='loginSplash'></div>
+            </S.loginContent>
+            <S.loginSplash></S.loginSplash>
         </S.LoginSection>
     );
 }

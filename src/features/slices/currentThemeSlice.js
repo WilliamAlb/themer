@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { CONSTS } from "../../util/CONSTS";
 
 const initialState = {
-    theme:window.localStorage.getItem('savedTheme')?window.localStorage.getItem('savedTheme'):CONSTS.initialTheme,
+    theme:!!window.localStorage.getItem('savedTheme')?JSON.parse(window.localStorage.getItem('savedTheme')):CONSTS.initialTheme,
     isDark:false
 }
 
@@ -11,7 +11,7 @@ const currentThemeReducer = createSlice({
     initialState:initialState,
     reducers:{
         changeTheme:(state,action)=>{
-            state=action.payload;
+            state.theme=action.payload;
             state.isDark=false;
         },
         resetTheme:(state)=>{
@@ -21,7 +21,7 @@ const currentThemeReducer = createSlice({
         toggleDarkMode:(state)=>{
             
             state.isDark=!state.isDark;
-            state.isDark? state.theme   =  CONSTS.initialThemeDark   : state.theme=CONSTS.initialTheme;
+            state.isDark? state.theme = CONSTS.initialThemeDark   : state.theme=CONSTS.initialTheme;
         }
     }
 })

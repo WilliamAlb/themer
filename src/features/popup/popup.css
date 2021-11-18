@@ -1,0 +1,63 @@
+.modal{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    animation: shootin 1s ease;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    text-align: center;
+    outline: none;
+
+}
+
+.ReactModal__Content--before-close{
+    animation: shootout 0.5s ease;
+}
+
+@keyframes shootin {
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes shootout {
+    from{
+        opacity: 1;
+        transform: translateY(0px);
+
+    }
+    to{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+@keyframes shootinWindow {
+    from{
+        opacity: 0;
+        transform: translate(-50%,-60%);
+    }
+    to{
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+}
+@keyframes shootoutWindow {
+    from{
+        opacity: 1;
+        transform: translate(-60%,-50%);
+
+    }
+    to{
+        opacity: 0;
+        transform: translate(-50%,-50%);
+    }
+}
