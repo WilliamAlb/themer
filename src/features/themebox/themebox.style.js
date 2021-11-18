@@ -16,6 +16,8 @@ export const ThemeboxDiv = styled.div`
     position:relative;
     border:2px solid ${({theme})=>theme.primaryColor};
     cursor:pointer;
+    overflow:hidden;
+    border-radius:50px;
 `
 export const ThemeboxTriangle = styled.div`
     width: 0;

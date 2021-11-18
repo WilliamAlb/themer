@@ -22,6 +22,7 @@ export function ThemeboxWindow(props){
             outline: "none",
             animation:'shootinWindow 1s ease',
             boxShadow:'0px 4px 4px 4px rgba(0, 0, 0, 0.25)',
+            borderRadius:20,
         },
         overlay:{
             position:'absolute',

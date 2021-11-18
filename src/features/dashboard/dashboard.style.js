@@ -33,7 +33,9 @@ export const LoadingBrush = styled.svg`
 export const ThemesSection = styled.section`
     padding-top:90px;
     padding-bottom:10px;
-    min-height:calc(100vh - 70px);
+    padding-left:20px;
+    padding-right:20px;
+    min-height:calc(100vh - 100px);
     height:fit-content;
     display:flex;
     flex-wrap:wrap;
