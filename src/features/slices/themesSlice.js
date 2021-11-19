@@ -1,7 +1,7 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
-import { collection,getDocs } from "firebase/firestore/lite";
+import { collection,getDocs,setDoc,doc } from "firebase/firestore/lite";
 import { database } from "../../util/firebase";
-
+import {v4} from 'uuid';
 
 export const fetchThemes = createAsyncThunk(
     'themes/fetchThemes',
@@ -12,6 +12,26 @@ export const fetchThemes = createAsyncThunk(
         return themesList;
     }
 )
+export const writeThemes = createAsyncThunk(
+    'themes/writeThemes',
+    async (theme) =>{
+        await setDoc(doc(database,'themes',v4()),{
+            primaryColor:theme.primaryColor,
+            secondarColor:theme.secondaryColor,
+            textColor:theme.textColor,
+            backgroundColor:theme.backgroundColor,
+            name:theme.name,
+        })
+        .then(() => {
+        })
+        .catch((error) => {
+            console.log(error.code);
+        });
+    }
+
+    
+)
+
 
 const initialState = {
     themes:[],
@@ -34,7 +54,16 @@ const themesReducer = createSlice({
             state.status='succeded';
             state.themes=action.payload;
         },
-        [fetchThemes.rejected]:(state,action)=>{
+        [fetchThemes.rejected]:(state)=>{
+            state.status='failed';
+        },
+        [writeThemes.pending]:(state) =>{
+            state.status='loading';
+        },
+        [writeThemes.fulfilled]:(state) =>{
+            state.status='succeded';
+        },
+        [writeThemes.rejected]:(state)=>{
             state.status='failed';
         }
     }
