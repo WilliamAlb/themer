@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const PopupDiv = styled.div`
     display: flex;
     flex-direction:column;
-    width:100%;
+    min-width:260px;
+    max-width:800px;
     height:100%;
     background-color:${({theme})=>theme.backgroundColor};
 
@@ -56,11 +57,20 @@ export const CircleContainer = styled.div`
     display:flex;
     justify-content:space-around;
     align-items:center;
+
+    @media only screen and (max-width:410px){
+        font-size:1rem;
+        width:200px;
+    }
 `
 export const CircleTextContainer = styled.div`
     display:flex;
     flex-direction:column;
     width:200px;
+    
+    @media only screen and (max-width:410px){
+        width:70px;
+    }
 `
 
 export const Circle = styled.div`
@@ -75,6 +85,10 @@ export const WindowTitle = styled.h2`
     font-weight:300;
     color:${({theme})=>theme.textColor};
     margin:10px;
+
+    @media only screen and (max-width:410px){
+        font-size:1.5rem;
+    }
 `
 export const WindowHeader = styled.div`
     display:flex;

@@ -12,8 +12,7 @@ export function ThemeboxWindow(props){
     const modalStyle = {
         content:{
             position: "absolute",
-            width: "50%",
-            minWidth:310,
+            width: 'fit-content',
             height: 1,
             minHeight:350,
             top: window.scrollY+300,
@@ -23,6 +22,7 @@ export function ThemeboxWindow(props){
             animation:'shootinWindow 1s ease',
             boxShadow:'0px 4px 4px 4px rgba(0, 0, 0, 0.25)',
             borderRadius:20,
+            margin:'10px;'
         },
         overlay:{
             position:'absolute',
