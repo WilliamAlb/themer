@@ -19,12 +19,14 @@ export const Title = styled.h1`
     color:${({theme})=>theme.textColor};
     font-family:'Roboto';
     font-weight:300;
+    text-align:center;
+    margin:10px;
 `;
 
 export const PickerContainer = styled.div`
     display:flex;
     width:90%;
-    min-height:800px;
+    min-height:750px;
     align-items:center;
     justify-content:space-evenly;
     flex-wrap:wrap;
@@ -43,6 +45,7 @@ export const SwatchContainer = styled.div`
 
     @media only screen and (max-width:400px){
         width:300px;
+        flex-direction:column;
     }
 `
 

@@ -3,6 +3,7 @@ import { collection,getDocs,setDoc,doc } from "firebase/firestore/lite";
 import { database } from "../../util/firebase";
 import {v4} from 'uuid';
 
+
 export const fetchThemes = createAsyncThunk(
     'themes/fetchThemes',
     async () =>{
@@ -17,12 +18,13 @@ export const writeThemes = createAsyncThunk(
     async (theme) =>{
         await setDoc(doc(database,'themes',v4()),{
             primaryColor:theme.primaryColor,
-            secondarColor:theme.secondaryColor,
+            secondaryColor:theme.secondaryColor,
             textColor:theme.textColor,
             backgroundColor:theme.backgroundColor,
             name:theme.name,
         })
         .then(() => {
+            theme.navigator('/');
         })
         .catch((error) => {
             console.log(error.code);
@@ -53,6 +55,7 @@ const themesReducer = createSlice({
         [fetchThemes.fulfilled]:(state,action) =>{
             state.status='succeded';
             state.themes=action.payload;
+            
         },
         [fetchThemes.rejected]:(state)=>{
             state.status='failed';

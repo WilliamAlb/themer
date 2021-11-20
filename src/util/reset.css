@@ -27,6 +27,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	text-decoration: none;
 	box-sizing: content-box;
+	border-style:solid;
 	/* user-select: none; 
 	-webkit-user-select: none; 
 	-khtml-user-select: none; 

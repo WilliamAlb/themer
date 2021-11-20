@@ -39,8 +39,7 @@ export function ThemeboxWindow(props){
     }
     const handleSave =()=> {
         dispatch(changeTheme(props.renderTheme));
-        window.localStorage.setItem('savedTheme',JSON.stringify(props.renderTheme))
-        console.log(JSON.parse(window.localStorage.getItem('savedTheme')));
+        window.localStorage.setItem('savedTheme',JSON.stringify(props.renderTheme));
     }
     const modalClose = () =>{
         props.setWindow(false);

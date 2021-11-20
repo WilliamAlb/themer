@@ -10,8 +10,8 @@ import * as S from "./create.style";
 
 export function Create(){
 
-    const dispatch = useDispatch();
     const navigator = useNavigate();
+    const dispatch = useDispatch();
     const pushState = useSelector(selectThemesState);
 
     const [primaryColor,setPrimaryColor] = useState('#764ABC');
@@ -47,10 +47,13 @@ export function Create(){
             secondaryColor:secondaryColor,
             textColor:textColor,
             backgroundColor:backgroundColor,
-            name:name
-        }
-        ));
-        navigator('/');
+            name:name,
+            navigator:navigator
+        },
+
+        ))
+ 
+
     }
     
     return (
@@ -61,23 +64,23 @@ export function Create(){
                 <S.PickerForm onSubmit={handleSubmit}>
                     <S.SwatchContainer>
                         <S.Label for='namePicker'>Name</S.Label>
-                        <S.NameInput type='text' id='namePicker' maxLength='14' value={name} onChange={handleNameChange}></S.NameInput>
+                        <S.NameInput type='text' id='namePicker' maxLength='14' value={name} onChange={handleNameChange} required></S.NameInput>
                     </S.SwatchContainer>
                     <S.SwatchContainer>
                         <S.Label for='primaryColorPicker'>Primary Color</S.Label>
-                        <S.Input type='color' id='primaryColorPicker' onChange={handlePrimaryChange} value={primaryColor}></S.Input>
+                        <S.Input type='color' id='primaryColorPicker' onChange={handlePrimaryChange} value={primaryColor} required></S.Input>
                     </S.SwatchContainer>
                     <S.SwatchContainer>
                         <S.Label for='secondaryColorPicker'>Secondary Color</S.Label>
-                        <S.Input type='color' id='secondaryColorPicker' onChange={handleSecondaryChange} value={secondaryColor}></S.Input>
+                        <S.Input type='color' id='secondaryColorPicker' onChange={handleSecondaryChange} value={secondaryColor} required></S.Input>
                     </S.SwatchContainer>
                     <S.SwatchContainer>
                         <S.Label for='textColorPicker'>Text Color</S.Label>
-                        <S.Input type='color' id='textColorPicker' onChange={handleTextChange} value={textColor}></S.Input>
+                        <S.Input type='color' id='textColorPicker' onChange={handleTextChange} value={textColor} required></S.Input>
                     </S.SwatchContainer>
                     <S.SwatchContainer>
                         <S.Label for='backgroundColorPicker'>Background Color</S.Label>
-                        <S.Input type='color' id='backgroundColorPicker' onChange={handleBackgroundChange} value={backgroundColor}></S.Input>
+                        <S.Input type='color' id='backgroundColorPicker' onChange={handleBackgroundChange} value={backgroundColor} required></S.Input>
                     </S.SwatchContainer>
                     <S.SubmitButton value={'Create'} type='submit' disabled={pushState!=="loading"?false:true}></S.SubmitButton>
                 </S.PickerForm>

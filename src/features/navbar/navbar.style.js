@@ -1,18 +1,14 @@
 import styled from "styled-components/macro";
 
-const sizes = {
-    button:window.outerWidth<400?'1rem':'1.5rem'
-};
-
 export const Button = styled.button`
     font-family:'Roboto';
     font-weight:300;
-    font-size:${sizes.button};
+    font-size:1.5rem;
     background-color:${({theme})=>theme.backgroundColor};
     border-color:${({theme})=>theme.textColor};
     color:${({theme})=>theme.textColor};
-    margin:${window.outerWidth<400?'5px':'10px'};
-    padding:${window.outerWidth<400?'5px 15px':'10px 30px'};
+    margin:10px;
+    padding:10px 30px;
     transition:0.2s all;
     cursor:pointer;
     border-radius:60px;
@@ -21,6 +17,17 @@ export const Button = styled.button`
         background-color:${({theme})=>theme.textColor};
         border-color:${({theme})=>theme.textColor};
         color:${({theme})=>theme.backgroundColor};
+    }
+
+    @media only screen and (max-width:520px){
+        margin: 5px;
+        padding: 5px 15px;
+        font-size:1.5rem;
+    }
+    @media only screen and (max-width:315px){
+        margin: 5px;
+        padding: 5px 15px;
+        font-size:1rem;
     }
 `
 export const NavButtonContainer = styled.div`
@@ -54,6 +61,15 @@ export const NavLogoContainer = styled.div`
     font-family:'Roboto';
     font-weight:300;
     align-items:center;
+`
+export const NavLogoName = styled.h3`
+    font-size:2rem;
+    font-family:'Roboto';
+    font-weight:300;
+
+    @media only screen and (max-width:450px){
+        display:none;
+    }
 `
 
 export const NavbarMode = styled.svg`

@@ -33,7 +33,7 @@ export function Navbar(){
         <S.Nav>
             <S.NavLogoContainer>
                 <NavLink to={routes.main}>{icons.logo}</NavLink>
-                {window.outerWidth>400?<h3>THEMER</h3>:null}
+                <S.NavLogoName>THEMER</S.NavLogoName>
             </S.NavLogoContainer>
 
             <S.NavButtonContainer>

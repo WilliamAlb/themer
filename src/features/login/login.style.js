@@ -10,12 +10,19 @@ export const LoginSection = styled.section`
     justify-content:center;
     background-color:${({theme})=>theme.backgroundColor};
     color:${({theme})=>theme.textColor};
+    
+    @media only screen and (max-width:600px){
+        text-shadow: 1px 1px black;
+        background-image: url(${background});
+        background-size: cover;
+        background-position: center;
+    }
 `
 export const H1 = styled.h1`
     font-size:3rem;
     font-family:'Roboto';
     font-weight:300;
-
+    text-align:center;
 `
 export const Input = styled.input`
     width:80%;
@@ -48,6 +55,10 @@ export const loginSplash = styled.div`
     background-position: center;
     box-shadow: 4px 4px 4px black;
     height: 100%;
+
+    @media only screen and (max-width:600px){
+        display:none;
+    }
 `
 export const loginForm = styled.form`
     height:fit-content;
