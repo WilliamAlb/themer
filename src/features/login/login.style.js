@@ -38,6 +38,11 @@ export const SubmitButton = styled.input`
     background-color:${({theme})=>theme.textColor};
     border-color:${({theme})=>theme.textColor};
     color:${({theme})=>theme.backgroundColor};
+    
+    @media only screen and (max-width:750px){
+        font-size:2rem;
+        margin:10px;
+    }
 `
 
 export const loginContent = styled.div`
