@@ -5,6 +5,7 @@ share themes and apply them to their own site to preview or keep on the site for
 they may submit a theme to be viewed by others.
 
 [Live site](https://willsthemer.netlify.app/) is available here along with my portfolio with a reference to the site [here](https://wills-portfolio.netlify.app/).
+[Wireframe](https://www.figma.com/file/FH7SBGT9FmOHTCK54p5il3/Themer-wireframe?node-id=0%3A1) is available here to witness the planning stage of the project.
 
 ## Technology
 * React
