@@ -9,22 +9,64 @@ export const ThemeboxDiv = styled.div`
     border:2px solid ${({theme})=>theme.primaryColor};
     cursor:pointer;
     overflow:hidden;
-    border-radius:50px;
-    @media only screen and (max-width:400px){
+    border-radius:20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    @media only screen and (max-width:450px){
         height:150px;
         width:200px;
     }
 `
-export const ThemeboxTriangle = styled.div`
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 300px 380px;
-    border-color: transparent transparent ${({renderTheme}) => renderTheme.primaryColor} transparent;
+export const ThemeboxContent1 = styled.div`
+    width: 80%;
+    height: 10px;
+    background-color:${({renderTheme})=>renderTheme.primaryColor};
+    position:absolute;
+    top:35%;
+    left 10%;
+    border-radius:20px;
 
-    @media only screen and (max-width:400px){
-        border-width: 0 0 150px 200px;
+`
+export const ThemeboxContent2 = styled.div`
+    width: 80%;
+    height: 10px;
+    background-color:${({renderTheme})=>renderTheme.primaryColor};
+    position:absolute;
+    top:45%;
+    left 10%;
+    border-radius:20px;
+`
+export const ThemeboxContent3 = styled.div`
+    width: 60%;
+    height: 10px;
+    background-color:${({renderTheme})=>renderTheme.primaryColor};
+    position:absolute;
+    top:55%;
+    left 10%;
+    border-radius:20px;
+    @media only screen and (max-width:450px){
+        width:58%;
     }
+`
+export const ThemeboxContent4 = styled.div`
+    width: 55%;
+    height: 10px;
+    background-color:${({renderTheme})=>renderTheme.primaryColor};
+    position:absolute;
+    top:65%;
+    left 10%;
+    border-radius:20px;
+
+`
+export const ThemeboxContent5 = styled.div`
+    width: 50%;
+    height: 10px;
+    background-color:${({renderTheme})=>renderTheme.primaryColor};
+    position:absolute;
+    top:75%;
+    left 10%;
+    border-radius:20px;
+
 `
 export const ThemeboxText = styled.p`
     position:absolute;
@@ -33,7 +75,7 @@ export const ThemeboxText = styled.p`
     left:10%;
     color:${({renderTheme})=>renderTheme.textColor};
 
-    @media only screen and (max-width:400px){
+    @media only screen and (max-width:450px){
         font-size:1rem;
     }
 `
@@ -45,8 +87,9 @@ export const ThemeboxCube = styled.div`
     width:100px;
     background-color:${({renderTheme})=>renderTheme.secondaryColor};
     border-radius:50%;
+    border: 2px solid ${({renderTheme})=>renderTheme.primaryColor};
 
-    @media only screen and (max-width:400px){
+    @media only screen and (max-width:450px){
         height:50px;
         width:50px;
     }

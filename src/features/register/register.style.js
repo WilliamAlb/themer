@@ -24,14 +24,18 @@ export const H1 = styled.h1`
     font-weight:300;
     text-align:center;
 
-    @media only screen and (max-width:750px){
-        font-size:2rem;
+    @media only screen and (max-height:610px){
+        font-size:1.5rem;
     }
 `
 export const Input = styled.input`
     width:80%;
     margin:15px 0px;
     font-size:2rem;
+    @media only screen and (max-height:610px){
+        font-size:1rem;
+        margin:0px;
+    }
 `
 export const SubmitButton = styled.input`
     width:80%;
@@ -44,6 +48,10 @@ export const SubmitButton = styled.input`
     color:${({theme})=>theme.backgroundColor};
 
     @media only screen and (max-width:750px){
+        font-size:2rem;
+        margin:10px;
+    }
+    @media only screen and (max-height:610px){
         font-size:2rem;
         margin:10px;
     }
@@ -81,5 +89,7 @@ export const RegisterLabel = styled.label`
     font-size: 2rem;
     font-weight: 300;
     justify-self: flex-start;
-
+    @media only screen and (max-height:610px){
+        font-size:1.5rem;
+    }
 `
