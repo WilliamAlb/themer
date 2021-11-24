@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`login On firebase error should display popup 1`] = `
+Array [
+  Object {
+    "email": "email@gmail.com",
+    "password": "Aa12345!",
+    "returnSecureToken": true,
+  },
+]
+`;
+
+exports[`login When form is valid end fire submit should call firebase 1`] = `
+Object {
+  "auth": Object {
+    "apiKey": "AIzaSyBAkNPiG1LX2-PlScZm_TOpTUGk6t3IBL4",
+    "appName": "[DEFAULT]",
+    "authDomain": "themer-9acfa.firebaseapp.com",
+    "currentUser": undefined,
+  },
+  "email": "email@gmail.com",
+  "password": "Aa12345!",
+}
+`;
