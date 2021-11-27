@@ -1,10 +1,11 @@
 # Will's Themer! [Live site](https://willsthemer.netlify.app/)
+![Logo](https://i.imgur.com/tQpfI6w.png)
 ## Dashboard Section
 ![Dashboard](https://i.imgur.com/whrBQTI.png)
 ## Login Section
-![Dashboard](https://i.imgur.com/QPBKXJH.png)
+![Login](https://i.imgur.com/QPBKXJH.png)
 ## Create Section
-![Dashboard](https://i.imgur.com/7Ybay6J.png)
+![Create](https://i.imgur.com/7Ybay6J.png)
 
 ## About
 An educational web application made with React with an aim to offer a solid database of themes for developers to use at their leisure,
