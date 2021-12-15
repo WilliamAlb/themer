@@ -23,6 +23,7 @@ export const Button = styled.button`
     transition:0.2s all;
     border-radius:60px;
     z-index:10;
+
     &:hover{
         background-color:${({theme})=>theme.textColor};
         border-color:${({theme})=>theme.textColor};

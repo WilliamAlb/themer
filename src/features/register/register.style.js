@@ -89,6 +89,7 @@ export const RegisterLabel = styled.label`
     font-size: 2rem;
     font-weight: 300;
     justify-self: flex-start;
+    
     @media only screen and (max-height:610px){
         font-size:1.5rem;
     }

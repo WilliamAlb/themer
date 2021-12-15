@@ -1,22 +1,6 @@
-import styled from "styled-components";
+import styled,{keyframes} from "styled-components";
 
-export const ThemeboxDiv = styled.div`
-    display:flex;
-    width:380px;
-    height:300px;
-    background-color:${({renderTheme}) => renderTheme.backgroundColor};
-    position:relative;
-    border:2px solid ${({theme})=>theme.primaryColor};
-    cursor:pointer;
-    overflow:hidden;
-    border-radius:20px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
-    @media only screen and (max-width:450px){
-        height:150px;
-        width:200px;
-    }
-`
+
 export const ThemeboxContent1 = styled.div`
     width: 80%;
     height: 10px;
@@ -93,4 +77,57 @@ export const ThemeboxCube = styled.div`
         height:50px;
         width:50px;
     }
+`
+
+export const ThemeboxDiv = styled.div`
+    display:flex;
+    width:380px;
+    height:300px;
+    background-color:${({renderTheme}) => renderTheme.backgroundColor};
+    position:relative;
+    border:2px solid ${({theme})=>theme.primaryColor};
+    cursor:pointer;
+    // overflow:hidden;
+    border-radius:20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform-style:preserve-3d;
+
+    &:hover{
+        transform: perspective(1200px) rotateX(50deg) rotateY(20deg) rotateZ(-25deg);
+    }
+    &:hover ${ThemeboxContent1}{
+        transform: perspective(1200px) translateX(35px) translateY(0px) translateZ(50px);
+        transition-delay:0.5s;
+    }
+    &:hover ${ThemeboxContent2}{
+        transform: perspective(1200px) translateX(35px) translateY(0px) translateZ(40px);
+        transition-delay:0.4s;
+    }
+    &:hover ${ThemeboxContent3}{
+        transform: perspective(1200px) translateX(35px) translateY(0px) translateZ(30px);
+        transition-delay:0.3s;
+    }
+    &:hover ${ThemeboxContent4}{
+        transform: perspective(1200px) translateX(35px) translateY(0px) translateZ(20px);
+        transition-delay:0.2s;
+    }
+    &:hover ${ThemeboxContent5}{
+        transform: perspective(1200px) translateX(35px) translateY(0px) translateZ(10px);
+        transition-delay:0.1s;
+    }
+    &:hover ${ThemeboxCube}{
+        transform: perspective(1200px) translateX(35px) translateY(0px) translateZ(10px);
+        transition-delay:0.7s;
+    }
+    &:hover ${ThemeboxText}{
+        transform: perspective(1200px) translateX(35px) translateY(0px) translateZ(40px);
+        transition-delay:0.1s;
+    }
+    
+    
+    @media only screen and (max-width:450px){
+        height:150px;
+        width:200px;
+    }
+
 `
