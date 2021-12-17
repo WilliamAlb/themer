@@ -14,6 +14,7 @@ import { routes } from '../util/routes';
 
 import { auth } from '../util/firebase';
 import { Create } from '../features/create/Create';
+import { Footer } from '../features/footer/Footer';
  
 
 function ProtectedRouteAvailableLoggedOut({children}){
@@ -55,6 +56,9 @@ function App() {
                   <Route path={routes.create} element={<ProtectedRouteAvailableLoggedIn><Create></Create></ProtectedRouteAvailableLoggedIn>}></Route>
               </Routes>
             </main>
+            <Footer>
+              
+            </Footer>
           </Router>
           </body>
         </CustomThemeProvider>
