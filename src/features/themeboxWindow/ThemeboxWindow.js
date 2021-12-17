@@ -11,26 +11,28 @@ export function ThemeboxWindow(props){
 
     const modalStyle = {
         content:{
-            position: "absolute",
+            position: "fixed",
             width: 'fit-content',
             height: 1,
             minHeight:350,
-            top: window.scrollY+300,
+            top: 300,
             left: "50%",
             transform:"translate(-50%,-50%)",
             outline: "none",
             animation:'shootinWindow 1s ease',
             boxShadow:'0px 4px 4px 4px rgba(0, 0, 0, 0.25)',
             borderRadius:20,
-            margin:'10px;'
+            margin:'10px;',
+            
         },
         overlay:{
-            position:'absolute',
+            position:'fixed',
             height:'100%',
             width:"100%",
             top:0,
             left: 0,
             zIndex:999,
+            transform:'translateZ(1000px)'
         },
     }
     

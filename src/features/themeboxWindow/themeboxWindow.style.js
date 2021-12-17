@@ -59,7 +59,7 @@ export const CircleContainer = styled.div`
     justify-content:space-around;
     align-items:center;
 
-    @media only screen and (max-width:410px){
+    @media only screen and (max-width:570px){
         font-size:1rem;
         width:200px;
     }
@@ -69,7 +69,7 @@ export const CircleTextContainer = styled.div`
     flex-direction:column;
     width:200px;
     
-    @media only screen and (max-width:410px){
+    @media only screen and (max-width:570px){
         width:70px;
     }
 `
@@ -87,7 +87,7 @@ export const WindowTitle = styled.h2`
     color:${({theme})=>theme.textColor};
     margin:10px;
 
-    @media only screen and (max-width:410px){
+    @media only screen and (max-width:570px){
         font-size:1.5rem;
     }
 `

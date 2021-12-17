@@ -28,7 +28,7 @@ export const ThemeboxContent3 = styled.div`
     top:55%;
     left 10%;
     border-radius:20px;
-    @media only screen and (max-width:450px){
+    @media only screen and (max-width:570px){
         width:58%;
     }
 `
@@ -59,7 +59,7 @@ export const ThemeboxText = styled.p`
     left:10%;
     color:${({renderTheme})=>renderTheme.textColor};
 
-    @media only screen and (max-width:450px){
+    @media only screen and (max-width:570px){
         font-size:1rem;
     }
 `
@@ -73,7 +73,7 @@ export const ThemeboxCube = styled.div`
     border-radius:50%;
     border: 2px solid ${({renderTheme})=>renderTheme.primaryColor};
 
-    @media only screen and (max-width:450px){
+    @media only screen and (max-width:570px){
         height:50px;
         width:50px;
     }
@@ -122,10 +122,11 @@ export const ThemeboxDiv = styled.div`
     &:hover ${ThemeboxText}{
         transform: perspective(1200px) translateX(35px) translateY(0px) translateZ(40px);
         transition-delay:0.1s;
+        text-shadow: 2px 0px ${({renderTheme})=>renderTheme.secondaryColor}, -2px 0px ${({renderTheme})=>renderTheme.secondaryColor}, 0px 2px ${({renderTheme})=>renderTheme.secondaryColor}, 0px -2px ${({renderTheme})=>renderTheme.secondaryColor};
     }
     
     
-    @media only screen and (max-width:450px){
+    @media only screen and (max-width:570px){
         height:150px;
         width:200px;
     }
