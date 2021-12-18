@@ -56,9 +56,6 @@ function App() {
                   <Route path={routes.create} element={<ProtectedRouteAvailableLoggedIn><Create></Create></ProtectedRouteAvailableLoggedIn>}></Route>
               </Routes>
             </main>
-            <Footer>
-              
-            </Footer>
           </Router>
           </body>
         </CustomThemeProvider>

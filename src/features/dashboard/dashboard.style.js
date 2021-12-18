@@ -19,6 +19,7 @@ export const LoadingBrush = styled.svg`
     position: absolute;
     top:50%;
     left:50%;
+    margin-bottom:90vh;
     color:${({theme})=>theme.textColor};
     animation: ${expandcontrast}
         2s
