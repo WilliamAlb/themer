@@ -46,7 +46,8 @@ export const Nav = styled.nav`
     box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
     z-index:10;
     background-color:${({theme})=>theme.backgroundColor};
-    transition:0.5s
+    transition:0.5s;
+    transform:translateZ(1000px);
 `
 
 export const NavbarLogo = styled.svg`

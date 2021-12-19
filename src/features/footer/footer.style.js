@@ -15,6 +15,10 @@ export const FooterTextDiv=styled.div`
     justify-content:center;
 `
  export const FooterText = styled.h3`
-    font-size:1.5rem;
-    color:${({theme})=>theme.textColor}
+    font-size:1rem;
+    color:${({theme})=>theme.textColor};
+    
+    @media only screen and (max-width:570px){
+        font-size:0.8rem;
+    }
  `;
