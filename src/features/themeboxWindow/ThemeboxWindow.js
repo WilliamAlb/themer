@@ -32,7 +32,9 @@ export function ThemeboxWindow(props){
             top:0,
             left: 0,
             zIndex:999,
-            transform:'translateZ(1000px)'
+            transform:'translateZ(1000px)',
+            backdropFilter:'blur(3px)',
+            transition:'1s',
         },
     }
     
